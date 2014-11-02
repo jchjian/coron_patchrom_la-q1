@@ -3882,17 +3882,6 @@
     return-void
 .end method
 
-.method static synthetic access$400(Landroid/widget/TextView;)Landroid/content/Context;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 214
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
 .method private applySingleLine(ZZZ)V
     .locals 1
     .parameter "singleLine"
