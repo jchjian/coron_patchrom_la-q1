@@ -1,0 +1,8 @@
+﻿1. Android 4.1.1
+2. 
+3. 芯片厂商及型号：NVIDIA AP30
+4. LCD&IC 厂商及型号：
+5. TP&IC 厂商及型号：
+6. RF&PA 厂商及型号：NVIDIA ICE9225B；skyworks SKY7770X
+7. Memery 厂商及型号和大小：Sandisk SD5D28B-4G  4GB+8Gb
+8. Camera 模组厂商及型号像素：
