@@ -788,7 +788,7 @@
 
     move-result-object v0
 
-    const v1, 0x1110029
+    const v1, #android:bool@config_voice_capable#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -853,7 +853,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0004
+    const v1, #android:integer@config_soundEffectVolumeDb#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -861,104 +861,82 @@
 
     sput v0, Landroid/media/AudioService;->SOUND_EFFECT_VOLUME_DB:I
 
-    .line 456
-    new-instance v0, Landroid/view/VolumePanel;
+    new-instance v0, Landroid/view/BaiduVolumePanel;
 
-    invoke-direct {v0, p1, p0}, Landroid/view/VolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
+    invoke-direct {v0, p1, p0}, Landroid/view/BaiduVolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
 
     iput-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
 
-    .line 457
     iput v11, p0, Landroid/media/AudioService;->mMode:I
 
-    .line 458
     iput v11, p0, Landroid/media/AudioService;->mForcedUseForComm:I
 
-    .line 459
     iput v11, p0, Landroid/media/AudioService;->mForcedUseForFM:I
 
-    .line 460
     invoke-direct {p0}, Landroid/media/AudioService;->createAudioSystemThread()V
 
-    .line 461
     invoke-direct {p0}, Landroid/media/AudioService;->readPersistedSettings()V
 
-    .line 462
     new-instance v0, Landroid/media/AudioService$SettingsObserver;
 
     invoke-direct {v0, p0}, Landroid/media/AudioService$SettingsObserver;-><init>(Landroid/media/AudioService;)V
 
     iput-object v0, p0, Landroid/media/AudioService;->mSettingsObserver:Landroid/media/AudioService$SettingsObserver;
 
-    .line 463
     invoke-direct {p0, v11}, Landroid/media/AudioService;->updateStreamVolumeAlias(Z)V
 
-    .line 464
     invoke-direct {p0}, Landroid/media/AudioService;->createStreamStates()V
 
-    .line 466
     iput-boolean v12, p0, Landroid/media/AudioService;->mMediaServerOk:Z
 
-    .line 470
     iput v11, p0, Landroid/media/AudioService;->mRingerModeMutedStreams:I
 
-    .line 471
     invoke-virtual {p0}, Landroid/media/AudioService;->getRingerMode()I
 
     move-result v0
 
     invoke-direct {p0, v0, v11}, Landroid/media/AudioService;->setRingerModeInt(IZ)V
 
-    .line 473
     iget-object v0, p0, Landroid/media/AudioService;->mAudioSystemCallback:Landroid/media/AudioSystem$ErrorCallback;
 
     invoke-static {v0}, Landroid/media/AudioSystem;->setErrorCallback(Landroid/media/AudioSystem$ErrorCallback;)V
 
-    .line 476
     new-instance v6, Landroid/content/IntentFilter;
 
     const-string v0, "android.bluetooth.headset.profile.action.AUDIO_STATE_CHANGED"
 
     invoke-direct {v6, v0}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 478
     .local v6, intentFilter:Landroid/content/IntentFilter;
     const-string v0, "android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 479
     const-string v0, "android.intent.action.DOCK_EVENT"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 480
     const-string v0, "android.intent.action.USB_AUDIO_ACCESSORY_PLUG"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 481
     const-string v0, "android.intent.action.USB_AUDIO_DEVICE_PLUG"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 482
     const-string v0, "android.intent.action.BOOT_COMPLETED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 483
     const-string v0, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 484
     const-string v0, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 488
-    const-string/jumbo v0, "ro.audio.monitorOrientation"
+    const-string v0, "ro.audio.monitorOrientation"
 
     invoke-static {v0, v11}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -1030,7 +1008,7 @@
 
     move-result-object v0
 
-    const v1, 0x111000b
+    const v1, #android:bool@config_useMasterVolume#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -1046,7 +1024,7 @@
 
     move-result-object v0
 
-    const v1, 0x1070012
+    const v1, #android:array@config_masterVolumeRamp#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -8871,7 +8849,7 @@
     .local v3, mNotificationMgr:Landroid/app/NotificationManager;
     iget-object v6, p0, Landroid/media/AudioService;->mContext:Landroid/content/Context;
 
-    const v7, 0x10403cc
+    const v7, #android:string@headset_plugin_view_title#t
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -8881,7 +8859,7 @@
     .local v5, title:Ljava/lang/CharSequence;
     iget-object v6, p0, Landroid/media/AudioService;->mContext:Landroid/content/Context;
 
-    const v7, 0x10403cb
+    const v7, #android:string@headset_plugin_view_text#t
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -8895,39 +8873,32 @@
 
     move-result-object v1
 
-    .line 3440
     .local v1, intent:Landroid/app/PendingIntent;
     new-instance v4, Landroid/app/Notification;
 
     invoke-direct {v4}, Landroid/app/Notification;-><init>()V
 
-    .line 3441
     .local v4, notification:Landroid/app/Notification;
-    const v6, 0x1080539
+    const v6, #android:drawable@stat_sys_plug_headset#t
 
     iput v6, v4, Landroid/app/Notification;->icon:I
 
-    .line 3442
     iput-object v5, v4, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
 
-    .line 3443
     iget v6, v4, Landroid/app/Notification;->flags:I
 
     or-int/lit8 v6, v6, 0x20
 
     iput v6, v4, Landroid/app/Notification;->flags:I
 
-    .line 3444
     iget-object v6, p0, Landroid/media/AudioService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4, v6, v5, v0, v1}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 3445
     const/16 v6, 0x1387
 
     invoke-virtual {v3, v6, v4}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
-    .line 3446
     return-void
 .end method
 

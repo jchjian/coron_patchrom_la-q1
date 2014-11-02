@@ -15029,7 +15029,7 @@
 
     iget-object v3, v0, Lcom/android/server/pm/PackageManagerService;->mResolveActivity:Landroid/content/pm/ActivityInfo;
 
-    const v10, 0x10302fa
+    const v10, #style@Theme.DeviceDefault.Light.Dialog.Alert#t
 
     iput v10, v3, Landroid/content/pm/ActivityInfo;->theme:I
 
@@ -16831,7 +16831,7 @@
 
     .line 3919
     .local v19, dataPathString:Ljava/lang/String;
-    invoke-static/range {p1 .. p1}, Lcom/android/server/pm/PackageManagerService;->isSystemApp(Landroid/content/pm/PackageParser$Package;)Z
+    invoke-static/range {p1 .. p1}, Lcom/android/server/pm/PackageManagerService;->isSystemAppBaidu(Landroid/content/pm/PackageParser$Package;)Z
 
     move-result v3
 
@@ -32366,7 +32366,7 @@
 
     move-result-object v5
 
-    const v6, 0x10403eb
+    const v6, #android:string@android_upgrading_apk#t
 
     const/4 v7, 0x2
 
@@ -38056,4 +38056,27 @@
 
     .line 5339
     return-void
+.end method
+
+.method static synthetic access$invoke-updateExternalMediaStatusInner-b17112(Lcom/android/server/pm/PackageManagerService;ZZZ)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .parameter "x3"
+
+    .prologue
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/pm/PackageManagerService;->updateExternalMediaStatusInner(ZZZ)V
+
+    return-void
+.end method
+
+.method private static isSystemAppBaidu(Landroid/content/pm/PackageParser$Package;)Z
+    .locals 1
+    .parameter "pkg"
+
+    .prologue
+    const/4 v0, 0x0
+
+    return v0
 .end method

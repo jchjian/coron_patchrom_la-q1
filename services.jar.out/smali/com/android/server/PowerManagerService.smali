@@ -10,6 +10,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/PowerManagerService$BaiduInjector;,
         Lcom/android/server/PowerManagerService$LockList;,
         Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;,
         Lcom/android/server/PowerManagerService$TimeoutTask;,
@@ -3132,26 +3133,22 @@
 
     if-eqz v4, :cond_0
 
-    .line 2847
     int-to-float v4, p1
 
     iput v4, p0, Lcom/android/server/PowerManagerService;->mLightSensorValue:F
 
-    .line 2848
     iget v4, p0, Lcom/android/server/PowerManagerService;->mPowerState:I
 
     and-int/lit8 v4, v4, 0x10
 
     if-nez v4, :cond_0
 
-    .line 2852
     iget-object v4, p0, Lcom/android/server/PowerManagerService;->mLcdBacklightValues:[I
 
-    invoke-direct {p0, p1, v4}, Lcom/android/server/PowerManagerService;->getAutoBrightnessValue(I[I)I
+    invoke-direct {p0, p1, v4}, Lcom/android/server/PowerManagerService;->getAutoBrightnessValueBaidu(I[I)I
 
     move-result v2
 
-    .line 2853
     .local v2, lcdValue:I
     iget-object v4, p0, Lcom/android/server/PowerManagerService;->mButtonBacklightValues:[I
 
@@ -9744,7 +9741,7 @@
 
     .line 714
     .local v7, resources:Landroid/content/res/Resources;
-    const v1, 0x1110015
+    const v1, #android:bool@config_animateScreenLights#t
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -9752,8 +9749,7 @@
 
     iput-boolean v1, p0, Lcom/android/server/PowerManagerService;->mAnimateScreenLights:Z
 
-    .line 717
-    const v1, 0x1110014
+    const v1, #android:bool@config_unplugTurnsOnScreen#t
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -9761,8 +9757,7 @@
 
     iput-boolean v1, p0, Lcom/android/server/PowerManagerService;->mUnplugTurnsOnScreen:Z
 
-    .line 720
-    const v1, 0x10e0024
+    const v1, #android:integer@config_screenBrightnessDim#t
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -9770,8 +9765,7 @@
 
     iput v1, p0, Lcom/android/server/PowerManagerService;->mScreenBrightnessDim:I
 
-    .line 724
-    const v1, 0x1110012
+    const v1, #android:bool@config_automatic_brightness_available#t
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -9779,13 +9773,11 @@
 
     iput-boolean v1, p0, Lcom/android/server/PowerManagerService;->mUseSoftwareAutoBrightness:Z
 
-    .line 726
     iget-boolean v1, p0, Lcom/android/server/PowerManagerService;->mUseSoftwareAutoBrightness:Z
 
     if-eqz v1, :cond_0
 
-    .line 727
-    const v1, 0x1070027
+    const v1, #android:array@config_autoBrightnessLevels#t
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -9793,8 +9785,7 @@
 
     iput-object v1, p0, Lcom/android/server/PowerManagerService;->mAutoBrightnessLevels:[I
 
-    .line 729
-    const v1, 0x1070028
+    const v1, #android:array@config_autoBrightnessLcdBacklightValues#t
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -9802,8 +9793,7 @@
 
     iput-object v1, p0, Lcom/android/server/PowerManagerService;->mLcdBacklightValues:[I
 
-    .line 731
-    const v1, 0x1070029
+    const v1, #android:array@config_autoBrightnessButtonBacklightValues#t
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -9811,8 +9801,7 @@
 
     iput-object v1, p0, Lcom/android/server/PowerManagerService;->mButtonBacklightValues:[I
 
-    .line 733
-    const v1, 0x107002a
+    const v1, #android:array@config_autoBrightnessKeyboardBacklightValues#t
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -9820,8 +9809,7 @@
 
     iput-object v1, p0, Lcom/android/server/PowerManagerService;->mKeyboardBacklightValues:[I
 
-    .line 735
-    const v1, 0x10e0025
+    const v1, #android:integer@config_lightSensorWarmupTime#t
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -9919,34 +9907,30 @@
 
     iput-object v1, p0, Lcom/android/server/PowerManagerService;->mSettings:Landroid/content/ContentQueryMap;
 
-    .line 756
     new-instance v9, Lcom/android/server/PowerManagerService$SettingsObserver;
 
     invoke-direct {v9, p0, v2}, Lcom/android/server/PowerManagerService$SettingsObserver;-><init>(Lcom/android/server/PowerManagerService;Lcom/android/server/PowerManagerService$1;)V
 
-    .line 757
     .local v9, settingsObserver:Lcom/android/server/PowerManagerService$SettingsObserver;
     iget-object v1, p0, Lcom/android/server/PowerManagerService;->mSettings:Landroid/content/ContentQueryMap;
 
     invoke-virtual {v1, v9}, Landroid/content/ContentQueryMap;->addObserver(Ljava/util/Observer;)V
 
-    .line 760
     iget-object v1, p0, Lcom/android/server/PowerManagerService;->mSettings:Landroid/content/ContentQueryMap;
 
     invoke-virtual {v9, v1, v2}, Lcom/android/server/PowerManagerService$SettingsObserver;->update(Ljava/util/Observable;Ljava/lang/Object;)V
 
-    .line 763
+    invoke-static/range {p0 .. p0}, Lcom/android/server/PowerManagerService$BaiduInjector;->regitsterBaiduSettingsObserver(Lcom/android/server/PowerManagerService;)V
+
     new-instance v6, Landroid/content/IntentFilter;
 
     invoke-direct {v6}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 764
     .local v6, filter:Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v6, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 765
     iget-object v1, p0, Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
 
     new-instance v3, Lcom/android/server/PowerManagerService$BatteryReceiver;
@@ -12148,4 +12132,126 @@
 
     .line 2638
     return-void
+.end method
+
+.method static synthetic access$iput-mUserState-660a4d(Lcom/android/server/PowerManagerService;I)I
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    iget v0, p0, Lcom/android/server/PowerManagerService;->mUserState:I
+
+    and-int/2addr v0, p1
+
+    iput v0, p0, Lcom/android/server/PowerManagerService;->mUserState:I
+
+    return v0
+.end method
+
+.method static synthetic access$iput-mPowerState-ef31dc(Lcom/android/server/PowerManagerService;I)I
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    iget v0, p0, Lcom/android/server/PowerManagerService;->mPowerState:I
+
+    and-int/2addr v0, p1
+
+    iput v0, p0, Lcom/android/server/PowerManagerService;->mPowerState:I
+
+    return v0
+.end method
+
+.method static synthetic access$iget-mLightSensorValue-d7f0b4(Lcom/android/server/PowerManagerService;)F
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    iget v0, p0, Lcom/android/server/PowerManagerService;->mLightSensorValue:F
+
+    return v0
+.end method
+
+.method static synthetic access$iput-mLightSensorValue-169ea2(Lcom/android/server/PowerManagerService;F)F
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    iput p1, p0, Lcom/android/server/PowerManagerService;->mLightSensorValue:F
+
+    return p1
+.end method
+
+.method private getAutoBrightnessValueBaidu(I[I)I
+    .locals 7
+    .parameter "sensorValue"
+    .parameter "values"
+
+    .prologue
+    const/16 v1, 0xff
+
+    .local v1, MAXIMUM_SCREEN_BRIGHTNESS:I
+    const/16 v0, 0x64
+
+    .local v0, DEFAULT_AUTOMATIC_BRIGHTNESS_COE:I
+    iget-object v4, p0, Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v4
+
+    const-string v5, "auto_brightness_coe"
+
+    invoke-static {v4, v5, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    .local v2, automaticBrightnessCoe:I
+    invoke-direct {p0, p1, p2}, Lcom/android/server/PowerManagerService;->getAutoBrightnessValue(I[I)I
+
+    move-result v4
+
+    mul-int/2addr v4, v2
+
+    div-int/lit8 v3, v4, 0x64
+
+    .local v3, lcdValue:I
+    const/16 v4, 0xff
+
+    invoke-static {v4, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v3
+
+    iget v4, p0, Lcom/android/server/PowerManagerService;->mScreenBrightnessDim:I
+
+    invoke-static {v4, v3}, Ljava/lang/Math;->max(II)I
+
+    move-result v3
+
+    const-string v4, "PowerManagerService"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "getAutoBrightnessValueBaidu() lcdValue="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return v3
 .end method

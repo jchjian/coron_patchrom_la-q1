@@ -4780,26 +4780,22 @@
 
     iput-wide v7, v6, Landroid/app/Notification;->when:J
 
-    .line 1671
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mNotification:Landroid/app/Notification;
 
     const/16 v7, 0x10
 
     iput v7, v6, Landroid/app/Notification;->flags:I
 
-    .line 1672
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mNotification:Landroid/app/Notification;
 
-    const v7, 0x108008a
+    const v7, #android:drawable@stat_sys_warning#t
 
     iput v7, v6, Landroid/app/Notification;->icon:I
 
-    .line 1673
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
-    .line 1674
     .local v2, intent:Landroid/content/Intent;
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mNotification:Landroid/app/Notification;
 
@@ -4818,7 +4814,7 @@
 
     .line 1678
     .local v1, details:Ljava/lang/CharSequence;
-    const v6, 0x10400eb
+    const v6, #android:string@RestrictedChangedTitle#t
 
     invoke-virtual {v0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -4898,35 +4894,28 @@
 
     if-ne p1, v6, :cond_0
 
-    .line 1718
     :cond_0
     return-void
 
-    .line 1683
     .end local v4           #notificationManager:Landroid/app/NotificationManager;
     :pswitch_1
     const/16 v3, 0x378
 
-    .line 1684
-    const v6, 0x10400ec
+    const v6, #android:string@RestrictedOnData#t
 
     invoke-virtual {v0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 1685
     goto :goto_0
 
-    .line 1687
     :pswitch_2
     const/16 v3, 0x378
 
-    .line 1688
     goto :goto_0
 
-    .line 1690
     :pswitch_3
-    const v6, 0x10400ef
+    const v6, #android:string@RestrictedOnAllVoice#t
 
     invoke-virtual {v0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -4937,7 +4926,7 @@
 
     .line 1693
     :pswitch_4
-    const v6, 0x10400ee
+    const v6, #android:string@RestrictedOnNormal#t
 
     invoke-virtual {v0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -4948,7 +4937,7 @@
 
     .line 1696
     :pswitch_5
-    const v6, 0x10400ed
+    const v6, #android:string@RestrictedOnEmergency#t
 
     invoke-virtual {v0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -5143,7 +5132,7 @@
 
     move-result-object v4
 
-    const v5, 0x104051c
+    const v5, #android:string@operator_chinamobile_td#t
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -5174,7 +5163,7 @@
 
     move-result-object v4
 
-    const v5, 0x104051b
+    const v5, #android:string@operator_chinamobile#t
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -5218,7 +5207,7 @@
 
     move-result-object v4
 
-    const v5, 0x104051d
+    const v5, #android:string@operator_chinaunicom#t
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -7449,7 +7438,7 @@
 
     move-result-object v13
 
-    const v14, 0x111002e
+    const v14, #android:bool@skip_restoring_network_selection#t
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -9648,7 +9637,7 @@
 
     move-result-object v8
 
-    const v9, 0x1040315
+    const v9, #android:string@emergency_calls_only#t
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -9789,40 +9778,41 @@
 
     invoke-virtual {p0, v6}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 541
     new-instance v0, Landroid/content/Intent;
 
     const-string v6, "android.provider.Telephony.SPN_STRINGS_UPDATED"
 
     invoke-direct {v0, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 542
     .local v0, intent:Landroid/content/Intent;
     const/high16 v6, 0x2000
 
     invoke-virtual {v0, v6}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 543
-    const-string/jumbo v6, "showSpn"
+    const-string v6, "showSpn"
 
     invoke-virtual {v0, v6, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 544
-    const-string/jumbo v6, "spn"
+    const-string v6, "spn"
+
+    invoke-virtual {p0, v5}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->updatePlmnOrSpnDisplay(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
 
     invoke-virtual {v0, v6, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 545
-    const-string/jumbo v6, "showPlmn"
+    const-string v6, "showPlmn"
 
     invoke-virtual {v0, v6, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 546
-    const-string/jumbo v6, "plmn"
+    const-string v6, "plmn"
+
+    invoke-virtual {p0, v1}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->updatePlmnOrSpnDisplay(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-virtual {v0, v6, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 547
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-virtual {v6}, Lcom/android/internal/telephony/gsm/GSMPhone;->getContext()Landroid/content/Context;
