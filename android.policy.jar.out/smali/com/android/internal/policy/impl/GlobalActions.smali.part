@@ -1,0 +1,33 @@
+.method static synthetic access$iget-mContext-250a2d(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 64
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$iget-mItems-bc40d5(Lcom/android/internal/policy/impl/GlobalActions;)Ljava/util/ArrayList;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 64
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mItems:Ljava/util/ArrayList;
+
+    return-object v0
+.end method
+
+.method static synthetic access$iget-mWindowManagerFuncs-0e34a6(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+
+    return-object v0
+.end method
+
