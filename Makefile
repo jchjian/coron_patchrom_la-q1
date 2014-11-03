@@ -25,7 +25,7 @@ RESOLUTION := 720x1280
 # 	if MINI_SYSTEM is true, it will cost much more time to build, and of course
 # the size of system size will be reduced.
 #-----------------------------------------------------------------------------
-MINI_SYSTEM := false
+MINI_SYSTEM := true
 
 ##############################################################################
 # Defaul NO_SYSTEM_IMG is true
