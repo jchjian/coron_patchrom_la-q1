@@ -39,6 +39,8 @@
 
 
 # instance fields
+.field private final mContext:Landroid/content/Context;
+
 .field private final mGpsStatus:Landroid/location/GpsStatus;
 
 .field private final mGpsStatusListeners:Ljava/util/HashMap;
