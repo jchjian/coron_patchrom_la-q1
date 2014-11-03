@@ -935,13 +935,7 @@
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
-    iget-object v2, p0, Landroid/location/LocationManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {p0, p1, v2}, Landroid/location/LocationManager;->getLastKnownLocationBaidu(Ljava/lang/String;Ljava/lang/String;)Landroid/location/Location;
+    invoke-direct {p0, p1}, Landroid/location/LocationManager;->getLastKnownLocationBaidu(Ljava/lang/String;)Landroid/location/Location;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2132,10 +2126,9 @@
     goto :goto_0
 .end method
 
-.method private getLastKnownLocationBaidu(Ljava/lang/String;Ljava/lang/String;)Landroid/location/Location;
+.method private getLastKnownLocationBaidu(Ljava/lang/String;)Landroid/location/Location;
     .locals 1
     .parameter "provider"
-    .parameter "packageName"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2157,7 +2150,7 @@
     :cond_0
     iget-object v0, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
-    invoke-interface {v0, p1, p2}, Landroid/location/ILocationManager;->getLastKnownLocation(Ljava/lang/String;Ljava/lang/String;)Landroid/location/Location;
+    invoke-interface {v0, p1}, Landroid/location/ILocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
 
     move-result-object v0
 
