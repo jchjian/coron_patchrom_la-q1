@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract copyMessageToIccEf(I[B[B)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract copyMessageToIccEf(I[B[B)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
