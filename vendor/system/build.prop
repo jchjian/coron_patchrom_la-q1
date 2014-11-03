@@ -12,8 +12,6 @@ ro.build.type=user
 ro.build.user=root
 ro.build.host=ubuntu-server
 ro.build.tags=test-keys
-ro.build.builder=安热网（apkhot.com）:孤魂在等野鬼（weibo.com/7170884）
-ro.builder.group=www.apkhot.com
 ro.product.model=LA-Q1
 ro.product.brand=Yusun
 ro.product.name=us9230
@@ -131,8 +129,6 @@ ro.media.enc.jpeg.quality=100
 ro.media.dec.jpeg.memcap=8000000
 ro.media.enc.hprof.vid.bps=8000000
 ro.config.hw_dolby=true
-ro.miui.ui.version.code=3
-ro.miui.ui.version.name=V5
 
 windowsmgr.max_events_per_sec=60
 persist.adb.notify=0
