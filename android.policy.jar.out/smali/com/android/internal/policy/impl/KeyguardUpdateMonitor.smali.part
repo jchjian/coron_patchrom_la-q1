@@ -1,0 +1,21 @@
+.method static synthetic access$iget-mContext-eefed8(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 64
+    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$iget-mHandler-c4eb97(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)Landroid/os/Handler;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 64
+    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
+
+    return-object v0
+.end method
