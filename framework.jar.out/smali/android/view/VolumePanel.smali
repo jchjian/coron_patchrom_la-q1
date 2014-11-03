@@ -3049,68 +3049,6 @@
 
     .line 539
     :cond_0
-    iget-object v2, p0, Landroid/view/VolumePanel;->mAudioService:Landroid/media/AudioService;
-
-    invoke-virtual {v2, p1}, Landroid/media/AudioService;->isStreamMute(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    iget-object v2, p0, Landroid/view/VolumePanel;->mAudioService:Landroid/media/AudioService;
-
-    invoke-virtual {v2, p1}, Landroid/media/AudioService;->getLastAudibleStreamVolume(I)I
-
-    move-result v0
-
-    .line 542
-    .local v0, index:I
-    :goto_0
-    if-nez p1, :cond_1
-
-    .line 544
-    add-int/lit8 v0, v0, 0x1
-
-    .line 545
-    const-string v2, "VolumePanel"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "increase the volume  to"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 546
-    iget-object v2, p0, Landroid/view/VolumePanel;->mContext:Landroid/content/Context;
-
-    const-string/jumbo v3, "phone"
-
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/telephony/TelephonyManager;
-
-    .line 547
-    .local v1, phoneManagerGSM:Landroid/telephony/TelephonyManager;
-    invoke-virtual {v1, v0}, Landroid/telephony/TelephonyManager;->setClvl(I)V
-
-    .line 551
-    .end local v1           #phoneManagerGSM:Landroid/telephony/TelephonyManager;
     :cond_1
     and-int/lit8 v2, p2, 0x1
 
@@ -3195,19 +3133,6 @@
     .line 575
     return-void
 
-    .line 539
-    .end local v0           #index:I
-    :cond_6
-    iget-object v2, p0, Landroid/view/VolumePanel;->mAudioService:Landroid/media/AudioService;
-
-    invoke-virtual {v2, p1}, Landroid/media/AudioService;->getStreamVolume(I)I
-
-    move-result v0
-
-    goto :goto_0
-
-    .line 557
-    .restart local v0       #index:I
     :catchall_0
     move-exception v2
 
