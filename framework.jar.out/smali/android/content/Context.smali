@@ -266,6 +266,9 @@
 .method public abstract getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
 .end method
 
+.method public abstract getExternalFilesDirs(Ljava/lang/String;)[Ljava/io/File; 
+.end method 
+
 .method public abstract getFileStreamPath(Ljava/lang/String;)Ljava/io/File;
 .end method
 

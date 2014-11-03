@@ -3557,15 +3557,16 @@
     return v0
 .end method
 
-.method static synthetic access$3800(Lcom/android/server/pm/PackageManagerService;ZZ)V
+.method static synthetic access$3800(Lcom/android/server/pm/PackageManagerService;ZZZ)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
+    .parameter "x3"
 
     .prologue
     .line 159
-    invoke-direct {p0, p1, p2}, Lcom/android/server/pm/PackageManagerService;->updateExternalMediaStatusInner(ZZ)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/pm/PackageManagerService;->updateExternalMediaStatusInner(ZZZ)V
 
     return-void
 .end method
@@ -22520,10 +22521,11 @@
     goto :goto_3
 .end method
 
-.method private updateExternalMediaStatusInner(ZZ)V
+.method private updateExternalMediaStatusInner(ZZZ)V
     .locals 25
     .parameter "isMounted"
     .parameter "reportStatus"
+    .parameter "externalStorage"
 
     .prologue
     .line 8864
@@ -22734,6 +22736,27 @@
     .end local v12           #num:I
     .restart local v13       #num:I
     :cond_4
+    if-eqz p3, :cond_baidu_00
+
+    if-nez p1, :cond_baidu_00
+
+    invoke-static/range {v16 .. v16}, Lcom/android/server/pm/PackageManagerService;->isExternal(Lcom/android/server/pm/PackageSetting;)Z
+
+    move-result v21
+
+    if-nez v21, :cond_baidu_00
+
+    move v12, v13
+
+    .line 8899
+    .end local v13           #num:I
+    .restart local v12       #num:I
+    goto :goto_2
+
+    .line 8902
+    .end local v12           #num:I
+    .restart local v13       #num:I
+    :cond_baidu_00
     new-instance v3, Lcom/android/server/pm/PackageManagerService$AsecInstallArgs;
 
     move-object/from16 v0, p0
@@ -36833,7 +36856,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, v1}, Lcom/android/server/pm/PackageManagerService;->updateExternalMediaStatusInner(ZZ)V
+    invoke-direct {p0, v0, v1, v1}, Lcom/android/server/pm/PackageManagerService;->updateExternalMediaStatusInner(ZZZ)V
 
     .line 8854
     return-void

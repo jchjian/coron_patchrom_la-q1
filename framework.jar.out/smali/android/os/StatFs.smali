@@ -45,6 +45,9 @@
 .method public native getAvailableBlocks()I
 .end method
 
+.method public native getAvailableBytes()J
+.end method
+
 .method public native getBlockCount()I
 .end method
 
