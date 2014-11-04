@@ -22,7 +22,7 @@ def CopyDataFiles(info):
       if info1.filename.startswith("DATA/"):
         basefilename = info1.filename[5:]
         info2 = copy.copy(info1)
-        fn = info2.filename = "data/app" + basefilename
+        fn = info2.filename = "data/app/" + basefilename
         if info.output_zip is not None:
           data = info.input_zip.read(info1.filename)
           info.output_zip.writestr(info2, data)
