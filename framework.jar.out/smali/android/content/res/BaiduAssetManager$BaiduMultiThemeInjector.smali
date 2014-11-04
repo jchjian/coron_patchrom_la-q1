@@ -339,7 +339,7 @@
 .end method
 
 .method static final openIconAsset(Landroid/util/TypedValue;Ljava/lang/String;Ljava/lang/String;Z)Ljava/io/InputStream;
-    .locals 10
+    .locals 11
     .parameter "value"
     .parameter "fileName"
     .parameter "packageName"
@@ -397,6 +397,19 @@
 
     move-result-object v9
 
+    const-string v10, "com.ti.fmrxapp"
+
+    invoke-virtual {v10, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_baidu_00
+
+    const-string v10, "com.baidu.fm.png"
+
+    move-object p1, v10
+
+    :cond_baidu_00
     invoke-static {v8, p0, v9, p1, p3}, Landroid/content/res/BaiduAssetManager$BaiduMultiThemeInjector;->findAccurateRes(ILandroid/util/TypedValue;Ljava/lang/String;Ljava/lang/String;Z)Ljava/io/File;
 
     move-result-object v0
