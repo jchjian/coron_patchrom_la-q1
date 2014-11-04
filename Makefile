@@ -74,7 +74,7 @@ vendor_remove_dirs := app vendor/operator/app
 ##############################################################################
 # Vendor apks you want to use
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth Stk
+vendor_saved_apps := Bluetooth Stk FmService DolbyMobileAudioEffectService
 
 ##############################################################################
 # Apks build from current project root directory
@@ -92,7 +92,7 @@ vendor_saved_apps := Bluetooth Stk
 # you need decode FMRadio.apk to the project directory (use apktool d FMRadio.apk) first
 # then you can make it by:   make FMRadio
 #-----------------------------------------------------------------------------
-# vendor_modify_apps := FMRadio
+vendor_modify_apps := FmRxApp
 
 ##############################################################################
 # Jars build from current project root directory

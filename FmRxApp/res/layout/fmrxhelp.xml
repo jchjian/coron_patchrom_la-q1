@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ParentLayout" android:background="@drawable/wallpaper8" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/scrollview1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:id="@id/widget224" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:id="@id/widget224" android:layout_width="fill_parent" android:layout_height="120.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+                <ImageView android:id="@id/imgFTP" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:src="@drawable/radio" />
+                <TextView android:textSize="24.0sp" android:textStyle="bold" android:layout_gravity="center" android:id="@id/lblFmRx" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="15.0dip" android:text="@string/app_rx" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/widget233" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_below="@id/widget224" android:layout_alignParentLeft="false">
+                <TextView android:textSize="24.0sp" android:textStyle="bold" android:id="@id/txtplatform" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginTop="20.0dip" android:text="@string/txtplatform" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/widget243" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_below="@id/widget233" android:layout_alignParentLeft="false">
+                <TextView android:textSize="24.0sp" android:id="@id/lblversion" android:paddingLeft="50.0dip" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginLeft="30.0dip" android:text="@string/lblversion" />
+                <TextView android:textSize="24.0sp" android:id="@id/txtversion" android:paddingLeft="30.0dip" android:layout_width="wrap_content" android:layout_height="40.0dip" android:text="@string/txtversion" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:gravity="right" android:id="@id/widget244" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:layout_gravity="center" android:id="@id/btnBack" android:layout_width="150.0dip" android:layout_height="50.0dip" android:text="@string/btnCancel" android:layout_alignParentRight="true" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ParentLayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/scrollview1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <LinearLayout android:id="@id/widget28" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="16.0sp" android:id="@id/freqRange" android:paddingBottom="20.0dip" android:layout_width="wrap_content" android:layout_height="50.0dip" android:text="@string/freqRangeEurope" />
+            <EditText android:textSize="16.0sp" android:id="@id/txtFrequency" android:layout_width="100.0dip" android:layout_height="50.0dip" android:text="@string/empty" android:maxLength="6" android:layout_weight="1.0" android:layout_below="@id/freqRange" android:inputType="numberDecimal" />
+            <TextView android:textSize="16.0sp" android:id="@id/label" android:layout_width="wrap_content" android:layout_height="40.0dip" android:text="@string/label" android:layout_alignBottom="@id/txtFrequency" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <Button android:id="@id/btnOk" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/btnOk" android:layout_weight="1.0" />
+        <Button android:id="@id/btnCancel" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/btnCancel" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

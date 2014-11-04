@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ParentLayout" android:background="@drawable/wallpaper8" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/widget224" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:id="@id/widget67" android:paddingTop="23.0dip" android:layout_width="fill_parent" android:layout_height="120.0dip" android:layout_marginLeft="5.0dip">
+            <TableLayout android:id="@id/TableLayout01" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TableRow android:layout_margin="1.0dip">
+                    <ImageButton android:id="@id/imgseekdown" android:background="@drawable/seek_down_bgd" android:layout_width="wrap_content" android:layout_height="80.0dip" />
+                </TableRow>
+            </TableLayout>
+            <TableLayout android:id="@id/TableLayout02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TableRow>
+                    <TextView android:textSize="22.0dip" android:layout_gravity="center" android:id="@id/txtStationName" android:visibility="visible" android:layout_height="10.0dip" android:text="@string/name" />
+                </TableRow>
+                <TableLayout android:orientation="horizontal" android:id="@id/widget39" android:layout_width="144.0dip" android:layout_height="60.0dip">
+                    <TableRow>
+                        <TextView android:textSize="50.0dip" android:textStyle="bold" android:id="@id/txtRxFreq" android:visibility="visible" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/rx_freq_val" android:layout_weight="1.0" />
+                        <TextView android:textSize="26.0dip" android:id="@id/txtLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginRight="1.0dip" android:text="@string/labelhz" android:layout_weight="1.0" />
+                    </TableRow>
+                </TableLayout>
+            </TableLayout>
+            <TableLayout android:id="@id/TableLayout03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TableRow android:layout_margin="1.0dip">
+                    <ImageButton android:id="@id/imgseekup" android:background="@drawable/seek_up_bgd" android:layout_width="wrap_content" android:layout_height="80.0dip" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+        <LinearLayout android:id="@id/widget30" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="56.0dip" android:layout_below="@id/widget67" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+            <ImageView android:layout_gravity="center" android:id="@id/imgMute" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <ImageView android:layout_gravity="center" android:id="@id/imgCompScan" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <ImageView android:layout_gravity="center" android:id="@id/imgSpk" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <ImageView android:layout_gravity="center" android:id="@id/imgPower" android:drawingCacheQuality="auto" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/poweron" android:adjustViewBounds="true" android:baselineAlignBottom="true" android:cropToPadding="true" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/widget80" android:layout_width="fill_parent" android:layout_height="216.0dip" android:layout_below="@id/widget30" android:layout_alignParentLeft="true">
+            <TextView android:id="@id/relex" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/widget95" android:layout_width="fill_parent" android:layout_height="64.0dip" android:layout_below="@id/widget80" android:layout_alignParentLeft="true">
+            <Button android:textSize="15.0sp" android:ellipsize="end" android:id="@id/station1" android:background="@drawable/btn_bgd" android:clickable="true" android:layout_width="fill_parent" android:layout_height="58.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/station1" android:singleLine="true" android:layout_weight="1.0" />
+            <Button android:textSize="15.0sp" android:ellipsize="end" android:id="@id/station2" android:background="@drawable/btn_bgd" android:clickable="true" android:layout_width="fill_parent" android:layout_height="58.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/station2" android:singleLine="true" android:layout_weight="1.0" />
+            <Button android:textSize="15.0sp" android:ellipsize="end" android:id="@id/station3" android:background="@drawable/btn_bgd" android:clickable="true" android:layout_width="fill_parent" android:layout_height="58.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/station3" android:singleLine="true" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/widget99" android:layout_width="fill_parent" android:layout_height="64.0dip" android:layout_below="@id/widget95" android:layout_alignParentLeft="true">
+            <Button android:textSize="15.0sp" android:ellipsize="end" android:layout_gravity="center" android:id="@id/station4" android:background="@drawable/btn_bgd" android:clickable="true" android:layout_width="fill_parent" android:layout_height="58.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/station4" android:singleLine="true" android:layout_weight="1.0" />
+            <Button android:textSize="15.0sp" android:ellipsize="end" android:layout_gravity="center" android:id="@id/station5" android:background="@drawable/btn_bgd" android:clickable="true" android:layout_width="fill_parent" android:layout_height="58.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/station5" android:singleLine="true" android:layout_weight="1.0" />
+            <Button android:textSize="15.0sp" android:ellipsize="end" android:layout_gravity="center" android:id="@id/station6" android:background="@drawable/btn_bgd" android:clickable="true" android:layout_width="fill_parent" android:layout_height="58.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/station6" android:singleLine="true" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

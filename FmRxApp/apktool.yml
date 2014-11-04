@@ -1,0 +1,13 @@
+version: 1.5.2
+apkFileName: FmRxApp.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '16'
+  targetSdkVersion: '16'
+packageInfo:
+  cur_package: com.ti.fmrxapp
+  orig_package: com.ti.fmrxapp
+compressionType: false
