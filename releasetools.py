@@ -1,6 +1,7 @@
 import common
 import edify_generator
 import time
+import copy
 
 def MyselfInfo(info):
   edify = info.script
@@ -16,7 +17,19 @@ ui_print("========================");
 show_progress(0.500000, 0);'''
       return
 
+def CopyDataFiles(info):
+    for info1 in info.input_zip.infolist():
+      if info1.filename.startswith("DATA/"):
+        basefilename = info1.filename[5:]
+        info2 = copy.copy(info1)
+        fn = info2.filename = "data/" + basefilename
+        if info.output_zip is not None:
+          data = info.input_zip.read(info1.filename)
+          info.output_zip.writestr(info2, data)
+        print ">>> Copying custom files: " + fn
+    return
+
 
 def FullOTA_InstallEnd(info):
     MyselfInfo(info)
-
+    CopyDataFiles(info)
