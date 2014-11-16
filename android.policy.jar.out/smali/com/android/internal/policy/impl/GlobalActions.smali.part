@@ -31,3 +31,13 @@
     return-object v0
 .end method
 
+.method static synthetic access$iget-mDialog-c6849a(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/app/AlertDialog;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
+
+    return-object v0
+.end method
